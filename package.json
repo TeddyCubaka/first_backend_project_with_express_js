@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "\"this is the first exercise on express and node js\"",
+  "main": "server.js",
+  "repository": "https://github.com/TeddyCubaka/first_backend_project_with_express_js.git",
+  "author": "Teddy Cubaka <teddycubaka96@gmail.com>",
+  "license": "MIT",
+  "private": null,
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  }
+}
