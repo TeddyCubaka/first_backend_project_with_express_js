@@ -46,7 +46,8 @@ app.use('/api/author', (req, res, next) => {
     firstName : 'Teddy',
     lastName : 'Cubaka',
     age : '20 ans',
-    work : 'web developper'
+    work : 'web developper',
+    imageUrl : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftedblymks.wordifysites.com%2F&psig=AOvVaw0mNzCEOx3hcgDnnWTzuAff&ust=1663793466133000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOCq0-mfpPoCFQAAAAAdAAAAABAD'
   }
   res.status(200).json(author)
 })
