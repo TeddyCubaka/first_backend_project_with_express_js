@@ -3,6 +3,14 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://Teddy:birhingingwa@teddy.miua6qr.mongodb.net/?retryWrites=true&w=majority',
+  { useNewUrlParser: true,
+    useUnifiedTopology: true })
+  .then(() => console.log('Connexion à MongoDB réussie !'))
+  .catch(() => console.log('Connexion à MongoDB échouée !'));
+
 app.use((req, res, next)=>{
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -12,11 +20,10 @@ app.use((req, res, next)=>{
 
 app.post('/api/stuff', (req, res, next) => {
   console.log(req.body);
-  res.status(201).json({
-    message: 'Objet créé !'
-  });
-  next();
-});
+  res.status(200).json({
+    message : "Réponse reçu"
+  })
+})
 
 app.use('/api/stuff', (req, res, next) => {
   const stuff = [
@@ -41,16 +48,7 @@ app.use('/api/stuff', (req, res, next) => {
   next();
 });
 
-app.use('/api/author', (req, res, next) => {
-  const author = {
-    firstName : 'Teddy',
-    lastName : 'Cubaka',
-    age : '20 ans',
-    work : 'web developper',
-    imageUrl : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftedblymks.wordifysites.com%2F&psig=AOvVaw0mNzCEOx3hcgDnnWTzuAff&ust=1663793466133000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOCq0-mfpPoCFQAAAAAdAAAAABAD'
-  }
-  res.status(200).json(author)
-})
+// mongodb+srv://Teddy:<password>@teddy.miua6qr.mongodb.net/?retryWrites=true&w=majority
 
 
 
