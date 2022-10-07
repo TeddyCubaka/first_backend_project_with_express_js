@@ -19,5 +19,4 @@ router.put('/:id', stuffCtrl.updateThing)
 
 router.delete('/:id', stuffCtrl.deleteThing)
 
-
 module.exports = router;
